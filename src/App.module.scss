@@ -1,0 +1,119 @@
+.app {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  font-family: sans-serif;
+}
+
+.iframe {
+  min-width: 768px;
+  width: 50%;
+  height: 100%;
+  border: 0;
+}
+
+.controls {
+  background-color: #222;
+  min-width: 200px;
+  max-width: 50%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  .timer {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 200px;
+    min-height: 200px;
+    padding-bottom: 20px;
+    .count {
+      font-family: 'Courier New', monospace;
+      color: #f0f3bd;
+      font-size: 100px;
+    }
+    button {
+      margin: 0 1em;
+      border: 0;
+      border-radius: 0;
+      padding: 10px;
+      color: #fff;
+      background-color: #028090;
+      border: 0;
+      cursor: pointer;
+      &:active{
+        opacity: 0.9;
+      }
+    }
+  }
+  .packetChoose {
+    min-height: 30px;
+    text-align: center;
+    flex-shrink: 0;
+    button {
+      width: 50%;
+      border: 0;
+      border-radius: 0;
+      height: 30px;
+      cursor: pointer;
+      opacity: 0.7;
+      background-color: #028090;
+      color: #fff;
+      transition: opacity 0.2s linear;
+      &.back,
+      &:hover,
+      &[disabled] {
+        opacity: 1;
+        background-color: #028090;
+      }
+      &[disabled] {
+        font-weight: bold;
+      }
+    }
+  }
+  .topic {
+    height: 100%;
+    overflow: auto;
+    color: #fff;
+    .question {
+      padding: 2em 0;
+      margin: 0 1em;
+      + .question {
+        border-top: 2px solid #f0f3bd;
+      }
+      button{
+        margin-top: 5px;
+        border: 0;
+        border-radius: 0;
+        padding: 5px 10px;
+        color: #fff;
+        background-color: #028090;
+        border: 0;
+        cursor: pointer;
+        font-size: 0.8em;
+        &:active{
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+  .questions {
+    height: 100%;
+    overflow: auto;
+    color: #fff;
+    text-align: center;
+    ul {
+      margin: 0;
+      list-style: none;
+      padding: 1rem 0;
+      display: inline-block;
+    }
+    li {
+      line-height: 35px;
+      cursor: pointer;
+      &:hover {
+        color: #f0f3bd;
+      }
+    }
+  }
+}
